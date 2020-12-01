@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap');
+
+:root{
+    --primary-color: #047857;
+    --secondary-color: #6EE7B7;
+}
+
+body{
+    font-family: 'Source Sans Pro' , sans-serif;
+    margin: 0;
+}
+
+h1{
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    text-align: center;
+    margin: 0;
+    padding: 1rem;
+}
+
+#body-width{
+    max-width: 600px;
+    margin: auto;
+}
+
+#text-input{
+    margin: 1rem 1rem 2rem 3.5rem;
+    width: 80%;
+    height: 10vh;
+    display: block;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+label{
+    margin-left: 3.5rem;
+    font-size: large;
+    color: var(--primary-color);
+}
+
+#select-option{
+    padding: 0.2rem;
+    margin-left: 2rem;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+#btn-translate{
+    display: block;
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+    padding: 0.5rem 1.5rem;
+    margin: 1rem 40% 1rem 40%;
+    border-radius: 2rem;
+
+}
+
+#btn-translate:hover{
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+}
+
+#disp-text{
+    text-align: center;
+    color: var(--primary-color);
+    margin: 1rem;
+}
+
+#op{
+    display: inline-block;
+    width: 100%;
+}
+
+#output-text{
+    margin: 1rem 1rem 0 3.5rem;
+    display: inline-block;
+    width: 80%;
+    border: 1px solid;
+    height: 17vh;
+    color: var(--primary-color);
+}
+
+#btn-mic{
+    /* display: inline-block; */
+    border-radius: 1rem;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-size: larger;
+    
+}
