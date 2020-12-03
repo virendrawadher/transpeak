@@ -8,13 +8,13 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>TransSpeak</h1>
+    <h1><span class="heading-1">Tran</span><span class="heading-2">Speak</span></h1>
     <div id="body-width">
         <textarea name="text" id="text-input" placeholder="Enter the text that you want to translate"></textarea>
         <label for="language">Choose the language to translate: </label>
         <select id="select-option">
-            <option value="morse" id="text-morse">Morse</option>
             <option value="thuum" id="text-thuum">Thuum</option>
+            <option value="morse" id="text-morse">Morse</option>
             <option value="leetspeak" id="text-leet">Leetspeak</option>
             <option value="wow" id="text-wow">Wow</option>
             <option value="test" id="text-test">Test</option>
@@ -24,11 +24,29 @@
         <div id="op">
             <div id="output-text"></div>
             <button id="btn-mic">
-                <i class="fa fa-microphone fa-x2"></i>
+                <i class="fa fa-microphone fa-x2"> Text to Speech</i>
             </button>
-        </div>
+        </div> 
+        <footer class="footer">
         
+            <div class="div-footer">
+                <h2><span>C</span>onnect <span>w</span>ith <span>m</span>e</h2>
+                <ul>
+                    <li><a href="https://www.twitter.com/virendra_wadher" class="fa fa-twitter" target="_blank"></a></li>
+                    <li><a href="https://www.github.com/virendrawadher" class="fa fa-github" target="_blank"></a></li>
+                    <li><a href="https://www.linkedin.com/in/virendra-wadher-042741155/" class="fa fa-linkedin" target="_blank"></a></li>
+                </ul>
+            </div>
+        </footer>
+        <p id="made-by">
+           <span class="vspan vpan">Made by Virendra Wadher💙</span> 
+           <span class="tspan tpan">Thanks to Tanay Pratap Sir 🙏</span>
+        </p>  
     </div>
+
+    <select name="voice" id="voice-option">
+
+    </select>
     
     <script src="app.js" type="text/javascript"></script>
 </body>
