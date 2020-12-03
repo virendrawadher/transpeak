@@ -16,9 +16,9 @@ var synth = window.speechSynthesis;
 
 voices = [];
 
-optionSel = ["Thuum", "Morse", "Leetspeak", "Wow", "Test", "Mandalorian"];
+optionSel = ["Thuum", "Morse", "Leetspeak", "Wow", "Test"];
 
-var Url = ["https://api.funtranslations.com/translate/thuum.json", "https://api.funtranslations.com/translate/morse.json", "https://api.funtranslations.com/translate/leetspeak.json", "https://api.funtranslations.com/translate/wow.json", "https://lessonfourapi.virendrawadher.repl.co/translate/yoda.json", "https://api.funtranslations.com/translate/mandalorian.json"]
+var Url = ["https://api.funtranslations.com/translate/thuum.json", "https://api.funtranslations.com/translate/morse.json", "https://api.funtranslations.com/translate/leetspeak.json", "https://api.funtranslations.com/translate/wow.json", "https://lessonfourapi.virendrawadher.repl.co/translate/yoda.json"]
 
 // var selectedOption = optionSelect.selectedOptions[0].text
 // if(selectedOption === "Morse"){
