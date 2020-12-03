@@ -98,11 +98,9 @@ label{
 }
 
 #btn-mic{
-    /* display: inline-block; */
     border-radius: 1rem;
     background-color: var(--primary-color);
     color: var(--secondary-color);
-    /* font-size: larger; */
     padding: 0.5rem 1.5rem;
     margin: 0.5rem 0 1rem 3rem;
     
@@ -115,15 +113,14 @@ label{
 
 .footer{
     margin: 0;
-    /* background-color: var(--secondary-color); */
-    /* padding-bottom: 10rem; */
+    
 }
 
 .footer .div-footer{
     max-width: 50%;
     display: inline-block;
     margin: 0 0 2rem 35%;
-    /* border: 2px solid var(--primary-color); */
+    
 }
 
 .footer h2 {
@@ -140,8 +137,6 @@ label{
 .footer ul{
     margin: 0;
     list-style: none;
-    /* padding: 0rem 2rem 2rem 41%; */
-    /* display: inline; */
     padding-inline-start: 0.5rem;
 }
 
@@ -168,7 +163,6 @@ label{
     animation-name: footer-1;
     animation-duration: 4s;
     animation-iteration-count: infinite;
-    /* animation-timing-function: ease-in-out; */
 }
 
 @keyframes footer-1 {
@@ -184,7 +178,6 @@ label{
     animation-name: footer-2;
     animation-duration: 4s;
     animation-iteration-count: infinite;
-    /* animation-timing-function: ease-in-out; */
 
 }
 
@@ -222,7 +215,6 @@ label{
 
     #div-mic{
         margin-bottom: 2rem;
-        border: 1px solid var(--primary-color);
     }
 
     #btn-mic{
@@ -236,14 +228,12 @@ label{
     .footer{
         margin: 0;
         background-color: var(--secondary-color);
-        /* padding-bottom: 10rem; */
     }
     
     .footer .div-footer{
         max-width: 70%;
         display: inline-block;
         margin: 0 0 2rem 25%;
-        /* border: 2px solid var(--primary-color); */
     }
     
     .footer h2 {
@@ -260,8 +250,6 @@ label{
     .footer ul{
         margin: 0;
         list-style: none;
-        /* padding: 0rem 2rem 2rem 41%; */
-        /* display: inline; */
         padding-inline-start: 0.5rem;
     }
     
@@ -284,7 +272,6 @@ label{
         margin-block-end: 0;
         margin-block-start: 0;
         text-align: center;
-        /* flex-wrap: wrap; */
     }
     
     #tp{
@@ -293,6 +280,5 @@ label{
         text-align: center;
 
     }
-
 
 }
