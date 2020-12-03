@@ -16,9 +16,9 @@ var synth = window.speechSynthesis;
 
 voices = [];
 
-optionSel = ["Thuum", "Morse", "Leetspeak", "Wow", "Test"];
+optionSel = ["Thuum", "Morse", "Leetspeak", "Wow", "Test", "Mandalorian"];
 
-var Url = ["https://api.funtranslations.com/translate/thuum.json", "https://api.funtranslations.com/translate/morse.json", "https://api.funtranslations.com/translate/leetspeak.json", "https://api.funtranslations.com/translate/wow.json", "https://lessonfourapi.virendrawadher.repl.co/translate/yoda.json"]
+var Url = ["https://api.funtranslations.com/translate/thuum.json", "https://api.funtranslations.com/translate/morse.json", "https://api.funtranslations.com/translate/leetspeak.json", "https://api.funtranslations.com/translate/wow.json", "https://lessonfourapi.virendrawadher.repl.co/translate/yoda.json", "https://api.funtranslations.com/translate/mandalorian.json"]
 
 // var selectedOption = optionSelect.selectedOptions[0].text
 // if(selectedOption === "Morse"){
@@ -39,7 +39,7 @@ function contentUrl(text){
 
 function servererror(error){
     alert("Sorry :( server is down try after sometime")
-    outputText.innerHTML = ''
+    outputText.innerHTML = '';
 }
 
 function translation(){
