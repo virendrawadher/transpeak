@@ -10,12 +10,22 @@ var micBtn = document.querySelector("#btn-mic");
 
 var outputText = document.querySelector("#output-text");
 
+var voiceOption = document.querySelector("#voice-option")
+
+var synth = window.speechSynthesis; 
+
 voices = [];
 
-optionSel = ["Morse", "Thuum", "Leetspeak", "Wow", "Test"];
+optionSel = ["Thuum", "Morse", "Leetspeak", "Wow", "Test"];
 
-var Url = ["https://api.funtranslations.com/translate/morse.json", "https://api.funtranslations.com/translate/thuum.json", "https://api.funtranslations.com/translate/leetspeak.json", "https://api.funtranslations.com/translate/wow.json", "https://lessonfourapi.virendrawadher.repl.co/translate/yoda.json"]
+var Url = ["https://api.funtranslations.com/translate/thuum.json", "https://api.funtranslations.com/translate/morse.json", "https://api.funtranslations.com/translate/leetspeak.json", "https://api.funtranslations.com/translate/wow.json", "https://lessonfourapi.virendrawadher.repl.co/translate/yoda.json"]
 
+// var selectedOption = optionSelect.selectedOptions[0].text
+// if(selectedOption === "Morse"){
+//     micBtn.style.display = "none";
+// } else {
+//     micBtn.style.display = "block";
+// }
 
 function contentUrl(text){
     var selectedOptions = optionSelect.selectedOptions[0].text
@@ -29,6 +39,12 @@ function contentUrl(text){
 
 function translation(){
     var selectedOptions = optionSelect.selectedOptions[0].text
+
+    if(selectedOptions === "Morse"){
+        micBtn.style.display = "none";
+    } else {
+        micBtn.style.display = "block";
+    }
     console.log("Option " + selectedOptions)
     for(i = 0; i < optionSel.length; i++ ){
         if (optionSel[i].toLowerCase() === selectedOptions.toLowerCase()){
@@ -41,8 +57,56 @@ function translation(){
             .then(function json(json){
                 var outputTranslate = json.contents.translated;
                 outputText.innerText = outputTranslate; 
+                function speakHandler(){
+                    speak(outputTranslate)
+                    outputTranslate = '';
+                }
+                micBtn.addEventListener("click", speakHandler)
             })
         }
+    }
+}
+
+function populatedVoices(){
+    voices = synth.getVoices()
+    var selectedIndex = voiceOption.selectedIndex < 0 ? 0 : voiceOption.selectedIndex;
+
+    voiceOption.innerHTML = '';
+    for(var i = 0; i < voices.length; i++){
+        var options = document.createElement('option');
+        options.textContent = voices[i].name  + "(" + voices[i].lang + ")"
+
+        if (voices[i].default){
+            options.textContent += "--DEFAULT" ; 
+        }
+
+        options.setAttribute('data-lang', voices[i].lang);
+        options.setAttribute('data-name', voices[i].name);
+        voiceOption.appendChild(options);
+
+    }
+}
+
+populatedVoices();
+if(speechSynthesis.onvoiceschanged !== undefined){
+    speechSynthesis.onvoiceschanged = populatedVoices;
+}
+
+function speak(input){
+    if(input !== ''){
+        var uttherThis = new SpeechSynthesisUtterance(input)
+        uttherThis.onerror = function(event){
+            alert("Fail to translate");
+        }
+
+        var selectedOptionsVoice = voiceOption.selectedOptions[0].getAttribute('data-name');
+        for(var i = 0; i < voices.length; i++){
+            if(voices[i].name === selectedOptionsVoice){
+                uttherThis.voice = voices[i]
+                break;
+            }
+        }
+        synth.speak(uttherThis);
     }
 }
 
@@ -51,4 +115,6 @@ function clickHandler(){
     translation();
 }
 translateBtn.addEventListener("click", clickHandler)
+
+
 
