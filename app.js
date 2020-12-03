@@ -37,14 +37,12 @@ function contentUrl(text){
     }
 }
 
+function servererror(error){
+    alert("Sorry :( server is down try after sometime")
+}
+
 function translation(){
     var selectedOptions = optionSelect.selectedOptions[0].text
-
-    if(selectedOptions === "Morse"){
-        micBtn.style.display = "none";
-    } else {
-        micBtn.style.display = "block";
-    }
     console.log("Option " + selectedOptions)
     for(i = 0; i < optionSel.length; i++ ){
         if (optionSel[i].toLowerCase() === selectedOptions.toLowerCase()){
@@ -63,8 +61,16 @@ function translation(){
                 }
                 micBtn.addEventListener("click", speakHandler)
             })
+            .catch(servererror);
         }
     }
+    if(selectedOptions === "Morse"){
+        micBtn.style.display = "none";
+        outputTranslate = '';
+    } else {
+        micBtn.style.display = "block";
+    }
+    
 }
 
 function populatedVoices(){
