@@ -39,6 +39,7 @@ function contentUrl(text){
 
 function servererror(error){
     alert("Sorry :( server is down try after sometime")
+    outputText.innerHTML = ''
 }
 
 function translation(){
@@ -54,21 +55,21 @@ function translation(){
             })
             .then(function json(json){
                 var outputTranslate = json.contents.translated;
-                outputText.innerText = outputTranslate; 
-                function speakHandler(){
-                    speak(outputTranslate)
+                outputText.innerText = outputTranslate;
+                if(selectedOptions === "Morse"){
+                    micBtn.style.display = "none";
                     outputTranslate = '';
-                }
+                } else {
+                    micBtn.style.display = "block";
+                    function speakHandler(){
+                        speak(outputTranslate)
+                        outputTranslate = '';
+                    }
+                } 
                 micBtn.addEventListener("click", speakHandler)
             })
             .catch(servererror);
         }
-    }
-    if(selectedOptions === "Morse"){
-        micBtn.style.display = "none";
-        outputTranslate = '';
-    } else {
-        micBtn.style.display = "block";
     }
     
 }
