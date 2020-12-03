@@ -170,22 +170,6 @@ label{
     50% {color: var(--secondary-color);}
 }
 
-#tp{
-    margin-block-end: 0;
-    margin-block-start: 0;
-    text-align: center;
-    font-weight: bold;
-    animation-name: footer-2;
-    animation-duration: 4s;
-    animation-iteration-count: infinite;
-
-}
-
-@keyframes footer-2 {
-    0% {color: var(--secondary-color);}
-    50% {color: var(--primary-color);}
-}
-
 @media all and (max-width: 500px){
     
     #text-input{
@@ -273,12 +257,4 @@ label{
         margin-block-start: 0;
         text-align: center;
     }
-    
-    #tp{
-        margin-block-end: 0;
-        margin-block-start: 0;
-        text-align: center;
-
-    }
-
 }
