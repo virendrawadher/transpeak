@@ -20,12 +20,6 @@ optionSel = ["Thuum", "Morse", "Leetspeak", "Cheunh"]
 
 var Url = ["https://api.funtranslations.com/translate/thuum.json", "https://api.funtranslations.com/translate/morse.json", "https://api.funtranslations.com/translate/leetspeak.json", "https://api.funtranslations.com/translate/cheunh.json"]
 
-// var selectedOption = optionSelect.selectedOptions[0].text
-// if(selectedOption === "Morse"){
-//     micBtn.style.display = "none";
-// } else {
-//     micBtn.style.display = "block";
-// }
 
 function contentUrl(text){
     var selectedOptions = optionSelect.selectedOptions[0].text
